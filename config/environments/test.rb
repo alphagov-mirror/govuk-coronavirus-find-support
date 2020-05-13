@@ -43,8 +43,4 @@ Rails.application.configure do
 
   # Access to rack session
   config.middleware.use RackSessionAccess::Middleware
-
-  # Configuration variables for basic auth to metrics server (prometheus)
-  config.metrics_username = ENV["METRICS_USERNAME"] || "username"
-  config.metrics_password = ENV["METRICS_PASSWORD"] || "password"
 end
