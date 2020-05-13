@@ -60,4 +60,8 @@ Rails.application.configure do
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
 
   config.analytics_tracking_id = "DEV-123456"
+
+  # Configuration variables for basic auth to metrics server (prometheus)
+  config.metrics_username = ENV["METRICS_USERNAME"] || "username"
+  config.metrics_password = ENV["METRICS_PASSWORD"] || "password"
 end

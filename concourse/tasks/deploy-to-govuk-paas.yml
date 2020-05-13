@@ -21,6 +21,8 @@ params:
   BASIC_AUTH_PASSWORD:
   AWS_ACCESS_KEY_ID:
   AWS_SECRET_ACCESS_KEY:
+  METRICS_USERNAME: ((metrics-username))
+  METRICS_PASSWORD: ((metrics-password))
   DATA_EXPORT_BASIC_AUTH_USERNAME:
   DATA_EXPORT_BASIC_AUTH_PASSWORD:
   GA_VIEW_ID: UA-43115970-1
@@ -51,6 +53,8 @@ run:
       cf set-env govuk-coronavirus-find-support SENTRY_DSN "$SENTRY_DSN"
       cf set-env govuk-coronavirus-find-support SENTRY_CURRENT_ENV "$CF_SPACE"
       cf set-env govuk-coronavirus-find-support GA_VIEW_ID "$GA_VIEW_ID"
+      cf set-env govuk-coronavirus-find-support METRICS_USERNAME "$METRICS_USERNAME"
+      cf set-env govuk-coronavirus-find-support METRICS_PASSWORD "$METRICS_USERNAME"
       cf set-env govuk-coronavirus-find-support AWS_ACCESS_KEY_ID "$AWS_ACCESS_KEY_ID"
       cf set-env govuk-coronavirus-find-support AWS_SECRET_ACCESS_KEY "$AWS_SECRET_ACCESS_KEY"
       cf set-env govuk-coronavirus-find-support SECRET_KEY_BASE "$SECRET_KEY_BASE"

@@ -117,4 +117,8 @@ Rails.application.configure do
   #   ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context =
   #   ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
+
+  # Configuration variables for basic auth to metrics server (prometheus)
+  config.metrics_username = ENV["METRICS_USERNAME"] || "username"
+  config.metrics_password = ENV["METRICS_PASSWORD"] || "password"
 end
