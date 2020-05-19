@@ -11,6 +11,10 @@
 # Example: prevent PhantomJS auto install, uses PhantomJS already on your path.
 
 require "jasmine/runners/selenium"
+require "webdrivers/chromedriver"
+
+puts "Using 83.0.4103.39"
+# Webdrivers::Chromedriver.required_version = "83.0.4103.39"
 
 Jasmine.configure do |config|
   config.prevent_phantom_js_auto_install = true

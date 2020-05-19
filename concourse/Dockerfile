@@ -14,12 +14,15 @@ RUN apt-get update --fix-missing && apt-get -y upgrade \
     && sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list' \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-      google-chrome-unstable \
+      google-chrome-stable \
       postgresql-11 \
     && rm -rf /var/lib/apt/lists/* \
     && rm -rf /src/*.deb
 
 ENV CHROME_NO_SANDBOX=true
+
+RUN # curl https://chromedriver.storage.googleapis.com/2.31/chromedriver_linux64.zip -o /usr/local/bin/chromedriver
+RUN # chmod +x /usr/local/bin/chromedriver
 
 COPY Gemfile* .ruby-version /application/
 
@@ -28,5 +31,10 @@ WORKDIR /application/
 RUN bundle install
 
 COPY . /application/
+
+RUN #bundle exec rake webdrivers:chromedriver:update[83.0.4103.39]
+RUN #bundle exec rake webdrivers:chromedriver:version || true
+
+RUN echo "Updated chromedriver..."
 
 ENTRYPOINT ["/bin/bash"]

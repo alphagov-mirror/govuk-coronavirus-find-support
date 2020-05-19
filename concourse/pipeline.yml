@@ -5,14 +5,14 @@ resources:
     icon: github-circle
     source:
       uri: https://github.com/alphagov/govuk-coronavirus-find-support
-      branch: master
+      branch: bilbof/phantomjs
 
   - name: git-master-gems-dockerfile
     icon: github-circle
     type: git
     source:
       uri:  https://github.com/alphagov/govuk-coronavirus-find-support
-      branch: master
+      branch: bilbof/phantomjs
       paths:
         - concourse/Dockerfile
         - Gemfile
