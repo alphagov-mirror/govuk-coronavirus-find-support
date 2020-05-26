@@ -152,7 +152,7 @@ RSpec.describe "ContentExporter" do
       expect(results_rows[0][:group_and_subgroup]).to eq("I am the title for Group one | I am the title for Group one subgroup one")
     end
 
-    it "returns a concatinated heading string with Support and Advice on the end if it's a support and advice link" do
+    it "returns a concatenated heading string with Support and Advice on the end if it's a support and advice link" do
       expect(results_rows[3][:group_and_subgroup]).to eq("I am the title for Group one | I am the title for Group one subgroup one | Support and Advice")
     end
 
