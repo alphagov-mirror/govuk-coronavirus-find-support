@@ -10,6 +10,6 @@ namespace :content do
     new_result_links = ContentImporter.import_results_links(args.fetch(:file_path))
     ContentImporter.overwrite_locale_links("config/locales/en.yml", new_result_links)
   rescue KeyError
-    puts "Please provoide a file path"
+    puts "Please provide a file path"
   end
 end
