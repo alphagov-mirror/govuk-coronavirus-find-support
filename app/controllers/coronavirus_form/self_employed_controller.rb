@@ -27,7 +27,6 @@ class CoronavirusForm::SelfEmployedController < ApplicationController
     end
   end
 
-
 private
 
   def update_questions_to_ask
@@ -37,7 +36,6 @@ private
                                    add_questions(%w[have_you_been_made_unemployed are_you_off_work_ill], controller_name)
                                  end
   end
-
 
   def redirect_to_results
     update_session_store
